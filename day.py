@@ -81,6 +81,8 @@ class FSM:
             print(f'At {hour} I finally study!')
             if hour == 23:
                 self.current_state = self.SLEEP
+            elif random()<0.05:
+                self.current_state = self.DEPRESSION
             elif random()<=0.9 and hour>=20:
                 self.current_state = self.STUDY
             elif 14 <= hour <= 19 and random()<0.4:
@@ -96,7 +98,7 @@ class FSM:
             print(f'At {hour} I feel sad :_(')
             if hour == 23:
                 self.current_state = self.SLEEP
-            elif random()<0.3 and hour<=20:
+            elif random()<0.4 and hour<=20:
                 self.current_state = self.DEPRESSION
             elif random()<0.6 and hour>20:
                 print('I\'m tired, so I want to lay down for a bit')
@@ -112,6 +114,8 @@ class FSM:
             print(f'At {hour} I procrastinate (I know, don\'t judge me)')
             if hour == 23:
                 self.current_state = self.SLEEP
+            elif random()<0.15:
+                self.current_state=self.DEPRESSION
             elif random()<=0.9 and hour>=21:
                 self.current_state = self.STUDY
             elif hour <= 13:
